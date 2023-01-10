@@ -15,11 +15,11 @@ RUN set -ex; \
     mkdir /build; \
     cd /build; \
     true "Install Go"; \
-    wget https://go.dev/dl/go${GO_VER}.linux-amd64.tar.gz; \
-    tar -C /usr/local -xzf go${GO_VER}.linux-amd64.tar.gz; \
+    wget "https://go.dev/dl/go${GO_VER}.linux-amd64.tar.gz"; \
+    tar -C /usr/local -xzf "go${GO_VER}.linux-amd64.tar.gz"; \
     export PATH=$PATH:/usr/local/go/bin; \
     true "Build container-registry"; \
-    git clone --depth 1 --shallow-submodules --branch v{REGISTRY_VER} https://gitlab.conarx.tech/gitlab/container-registry; \
+    git clone --depth 1 --shallow-submodules --branch "v${REGISTRY_VER}" https://gitlab.conarx.tech/gitlab/container-registry; \
     cd container-registry; \
     make
 
