@@ -24,6 +24,8 @@ Our images are fully compatible with GitLab official images.
 
 Simply change the image used to `allworldit/gitlab-ce`.
 
+A minor version can be used and is suggested by using `allworldit/gitab-ce:latest-15.7`.
+
 A specific version can be used by using `allworldit/gitlab-ce:15.7.2-ce.0`.
 
 
