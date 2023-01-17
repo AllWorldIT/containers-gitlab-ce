@@ -25,12 +25,12 @@ RUN set -ex; \
 
 
 
-FROM gitlab/gitlab-ce:15.7.3-ce.0
+FROM gitlab/gitlab-ce:15.7.4-ce.0
 
 MAINTAINER Conarx, Ltd <support@conarx.tech>
 
 LABEL org.opencontainers.image.authors   = "Nigel Kukard <nkukard@conarx.tech>"
-LABEL org.opencontainers.image.version   = "15.7.3-ce.0"
+LABEL org.opencontainers.image.version   = "15.7.4-ce.0"
 LABEL org.opencontainers.image.base.name = "docker.io/gitlab/gitlab-ce"
 
 COPY --from=builder /build/container-registry/bin/digest /opt/gitlab/embedded/bin/digest
