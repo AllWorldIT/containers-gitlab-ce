@@ -2,3 +2,7 @@ include:
   - project: 'gitlab/templates/containers'
     ref: main
     file: '/default.yml'
+
+test:
+  stage: test
+  when: manual
