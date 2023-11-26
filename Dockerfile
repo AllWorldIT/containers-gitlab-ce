@@ -19,9 +19,9 @@
 # IN THE SOFTWARE.
 
 
-FROM ubuntu:20.04 as builder
+FROM ubuntu:22.04 as builder
 
-ENV GO_VER=1.19.4
+ENV GO_VER=1.21.4
 
 ENV REGISTRY_VER=3.85.0-gitlab+es
 
@@ -46,13 +46,13 @@ RUN set -eux; \
 
 
 
-FROM gitlab/gitlab-ce:16.5.1-ce.0
+FROM gitlab/gitlab-ce:16.5.2-ce.0
 
 MAINTAINER Conarx, Ltd <support@conarx.tech>
 
 LABEL org.opencontainers.image.authors   "Nigel Kukard <nkukard@conarx.tech>"
-LABEL org.opencontainers.image.version   "16.5.1-ce.0"
-LABEL org.opencontainers.image.base.name "docker.io/gitlab/gitlab-ce:16.5.1-ce.0"
+LABEL org.opencontainers.image.version   "16.5.2-ce.0"
+LABEL org.opencontainers.image.base.name "docker.io/gitlab/gitlab-ce:16.5.2-ce.0"
 
 COPY --from=builder /build/container-registry/bin/digest /opt/gitlab/embedded/bin/digest
 COPY --from=builder /build/container-registry/bin/registry /opt/gitlab/embedded/bin/registry
