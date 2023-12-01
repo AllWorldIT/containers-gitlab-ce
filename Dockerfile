@@ -42,7 +42,8 @@ RUN set -eux; \
     true "Build container-registry"; \
     git clone --depth 1 --shallow-submodules --branch "v${REGISTRY_VER}" https://gitlab.conarx.tech/gitlab/container-registry; \
     cd container-registry; \
-    make
+    make; \
+    ls -la bin/
 
 
 
