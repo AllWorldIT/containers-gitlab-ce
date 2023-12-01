@@ -42,7 +42,8 @@ RUN set -eux; \
     true "Build container-registry"; \
     git clone --depth 1 --shallow-submodules --branch "v${REGISTRY_VER}" https://gitlab.conarx.tech/gitlab/container-registry; \
     cd container-registry; \
-    make
+    make; \
+    ls -la bin/
 
 
 
@@ -56,4 +57,3 @@ LABEL org.opencontainers.image.base.name "docker.io/gitlab/gitlab-ce:16.6.1-ce.0
 
 COPY --from=builder /build/container-registry/bin/digest /opt/gitlab/embedded/bin/digest
 COPY --from=builder /build/container-registry/bin/registry /opt/gitlab/embedded/bin/registry
-COPY --from=builder /build/container-registry/bin/registry-api-descriptor-template /opt/gitlab/embedded/bin/registry-api-descriptor-template
