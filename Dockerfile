@@ -57,4 +57,3 @@ LABEL org.opencontainers.image.base.name "docker.io/gitlab/gitlab-ce:16.6.1-ce.0
 
 COPY --from=builder /build/container-registry/bin/digest /opt/gitlab/embedded/bin/digest
 COPY --from=builder /build/container-registry/bin/registry /opt/gitlab/embedded/bin/registry
-COPY --from=builder /build/container-registry/bin/registry-api-descriptor-template /opt/gitlab/embedded/bin/registry-api-descriptor-template
