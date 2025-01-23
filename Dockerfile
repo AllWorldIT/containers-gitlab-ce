@@ -1,4 +1,4 @@
-# Copyright (c) 2022-2023, AllWorldIT.
+# Copyright (c) 2022-2025, AllWorldIT.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to
@@ -19,9 +19,9 @@
 # IN THE SOFTWARE.
 
 
-FROM ubuntu:22.04 as builder
+FROM ubuntu:24.04 as builder
 
-ENV GO_VER=1.21.4
+ENV GO_VER=1.23.5
 
 ENV REGISTRY_VER=4.13.0-gitlab+es
 
@@ -47,12 +47,12 @@ RUN set -eux; \
 
 
 
-FROM gitlab/gitlab-ce:17.7.2-ce.0
+FROM gitlab/gitlab-ce:17.8.1-ce.0
 
 MAINTAINER Conarx, Ltd <support@conarx.tech>
 
 LABEL org.opencontainers.image.authors   "Nigel Kukard <nkukard@conarx.tech>"
-LABEL org.opencontainers.image.version   "17.7.2-ce.0"
-LABEL org.opencontainers.image.base.name "docker.io/gitlab/gitlab-ce:17.7.2-ce.0"
+LABEL org.opencontainers.image.version   "17.8.1-ce.0"
+LABEL org.opencontainers.image.base.name "docker.io/gitlab/gitlab-ce:17.8.1-ce.0"
 
 COPY --from=builder /build/container-registry/bin/registry /opt/gitlab/embedded/bin/registry
