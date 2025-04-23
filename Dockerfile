@@ -23,7 +23,7 @@ FROM ubuntu:24.04 as builder
 
 ENV GO_VER=1.24.0
 
-ENV REGISTRY_VER=4.17.1-gitlab+es
+ENV REGISTRY_VER=4.19.0-gitlab+es
 
 
 RUN set -eux; \
@@ -47,12 +47,12 @@ RUN set -eux; \
 
 
 
-FROM gitlab/gitlab-ce:17.10.4-ce.0
+FROM gitlab/gitlab-ce:17.11.1-ce.0
 
 MAINTAINER Conarx, Ltd <support@conarx.tech>
 
 LABEL org.opencontainers.image.authors   = "Nigel Kukard <nkukard@conarx.tech>"
-LABEL org.opencontainers.image.version   = "17.10.4-ce.0"
-LABEL org.opencontainers.image.base.name = "docker.io/gitlab/gitlab-ce:17.10.4-ce.0"
+LABEL org.opencontainers.image.version   = "17.11.1-ce.0"
+LABEL org.opencontainers.image.base.name = "docker.io/gitlab/gitlab-ce:17.11.1-ce.0"
 
 COPY --from=builder /build/container-registry/bin/registry /opt/gitlab/embedded/bin/registry
