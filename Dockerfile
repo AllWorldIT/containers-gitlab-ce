@@ -23,7 +23,7 @@ FROM ubuntu:24.04 as builder
 
 ENV GO_VER=1.24.0
 
-ENV REGISTRY_VER=4.19.0-gitlab+es
+ENV REGISTRY_VER=4.19.1-gitlab+es
 
 
 RUN set -eux; \
