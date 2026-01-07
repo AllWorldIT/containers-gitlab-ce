@@ -47,12 +47,12 @@ RUN set -eux; \
 
 
 
-FROM gitlab/gitlab-ce:18.6.2-ce.0
+FROM gitlab/gitlab-ce:18.6.3-ce.0
 
 MAINTAINER Conarx, Ltd <support@conarx.tech>
 
 LABEL org.opencontainers.image.authors   = "Nigel Kukard <nkukard@conarx.tech>"
-LABEL org.opencontainers.image.version   = "18.6.2-ce.0"
+LABEL org.opencontainers.image.version   = "18.6.3-ce.0"
 LABEL org.opencontainers.image.base.name = "docker.io/ubuntu:24.04"
 
 COPY --from=builder /build/container-registry/bin/registry /opt/gitlab/embedded/bin/registry
